@@ -88,6 +88,20 @@ table {
             flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
     width: 100%; }
+  .wrapper--services {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
 
 .navbar {
   position: fixed;
@@ -210,3 +224,76 @@ table {
 @media (max-width: 375px) {
   .header .header__desc {
     font-size: 50px; } }
+
+.services {
+  width: 100%;
+  height: 570px;
+  text-align: center; }
+  .services .services__desc {
+    font-size: 40px;
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #222222; }
+  .services .services__para {
+    font-size: 20px;
+    color: #777777;
+    font-family: Roboto Slab, serif; }
+  .services .services__container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 80px; }
+    .services .services__container .services__service {
+      height: 180px;
+      width: 290px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      text-align: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .services .services__container .services__service h3 {
+        color: #222222;
+        font-size: 18px;
+        font-family: Montserrat, sans-serif;
+        text-transform: uppercase;
+        font-weight: bold; }
+      .services .services__container .services__service p {
+        color: #777777;
+        font-family: Roboto Slab, serif;
+        font-size: 14px;
+        position: relative;
+        bottom: 25px; }
+
+@media (max-width: 1476px) {
+  .services .wrapper {
+    width: 100%; } }
+
+@media (max-width: 886px) {
+  .services {
+    height: 700px; } }
+
+@media (max-width: 596px) {
+  .services {
+    height: 950px; }
+    .services .services__container .services__service {
+      margin-bottom: 30px; } }
+
+@media (max-width: 375px) {
+  .services .services__desc {
+    font-size: 36px; } }
