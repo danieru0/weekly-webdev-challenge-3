@@ -1,0 +1,166 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* 1 */
+}
+
+// -------------------------------------------
+
+// variables
+$color-black: #222222;
+
+$font-mont: Montserrat, sans-serif;
+$font-roboto: Roboto Slab, serif;
+
+// wrapper for elements
+.wrapper {
+	width: 1460px;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	&--navbar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+// navbar
+.navbar {
+	position: fixed;
+	width: 100%;
+	height: 115px;
+	background-color: #ffffff;
+	z-index: 1;
+	border-bottom: 1px solid $color-black;
+	transition: height 0.3s;
+	.navbar__hamburger {
+		position: absolute;
+		right: 0;
+		display: none;
+		.hamburger {
+			font-size: 24px;
+			background: transparent;
+			border: none;
+			cursor: pointer;
+		}
+	}
+	.navbar__list {
+		display: flex;
+		list-style: none;
+		.navbar__item {
+			margin-left: 36px;
+			a {
+				text-decoration: none;
+				color: $color-black;
+				font-family: $font-mont;
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+		}
+	}
+	&--is-sticky {
+		height: 80px;
+		.navbar__list {
+			top: 81px !important;
+		}
+	}
+}
+
+@media (max-width: 1480px) {
+	.wrapper--navbar {
+		width: 100%;
+		justify-content: space-around;
+	}
+}
+
+@media (max-width: 710px) {
+	.navbar {
+		.navbar__hamburger {
+			display: block;
+		}
+		.navbar__logo {
+			margin-right: 20px;
+		}
+		.navbar__list {
+			flex-direction: column;
+			background-color: #ffffff;
+			width: 100%;
+			position: absolute;
+			align-items: center;
+			height: 0px;
+			top: 116px;
+			overflow: hidden;
+			transition: height 0.4s ease-in-out, top 0.3s;
+			.navbar__item {
+				margin: 0;
+				line-height: 30px;
+			}
+			&--is-active {
+				height: 150px;
+			}
+		}
+	}
+}
+
+// header
+.header {
+	width: 100%;
+	height: 1000px;
+	background-color: black;
+}
