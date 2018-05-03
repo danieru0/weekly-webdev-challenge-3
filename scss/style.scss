@@ -140,7 +140,7 @@ $font-roboto: Roboto Slab, serif;
 	width: 100%;
 	height: 115px;
 	background-color: #ffffff;
-	z-index: 1;
+	z-index: 999;
 	border-bottom: 1px solid $color-grey;
 	transition: height 0.3s;
 	.navbar__hamburger {
@@ -327,6 +327,110 @@ $font-roboto: Roboto Slab, serif;
 	.services {
 		.services__desc {
 			font-size: 36px;
+		}
+	}
+}
+
+// relax
+.relax {
+	width: 100%;
+	height: 630px;
+	display: flex;
+	.relax__gear {
+		height: 100%;
+		background-color: #e9e9e9;
+		width: 30%;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		img {
+			position: relative;
+			right: -190px;
+		}
+	}
+	.relax__content {
+		height: 100%;
+		background-image: url("imgs/just-relax.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		width: 70%;
+		z-index: 1;
+		.relax__overlay {
+			background-color: rgba(0,0,0,0.6);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			.relax__wrapper {
+				margin-left: 100px;
+				.relax__desc {
+					@include header(#ffffff);
+					line-height: 50px;
+					margin-bottom: 30px;
+				}
+				.green {
+					color: $color-green;
+				}
+				.relax__para {
+					color: $color-greyL;
+					font-family: $font-roboto;
+					font-size: 16px;
+					line-height: 25px;
+					margin-bottom: 17px;
+					width: 500px;
+				}
+				.relax__whatdo {
+					width: 300px;
+					margin-bottom: 3px;
+					display: flex;
+					align-items: center;
+					.fa-stack {
+						font-size: 20px;
+						color: $color-greyL;
+					}
+					h3 {
+						color: $color-greyL;
+						font-family: $font-roboto;
+						font-size: 16px;
+						position: relative;
+						left: 30px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 873px) {
+	.relax {
+		.relax__gear {
+			display: none;
+		}
+		.relax__content {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 616px) {
+	.relax {
+		.relax__content {
+			.relax__overlay {
+				.relax__wrapper {
+					text-align: center;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					margin: 0;
+					.relax__para {
+						width: 100%;
+					}
+					.relax__whatdo {
+					}
+				}
+			}
 		}
 	}
 }
