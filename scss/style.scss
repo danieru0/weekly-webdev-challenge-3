@@ -132,6 +132,12 @@ $font-roboto: Roboto Slab, serif;
 		justify-content: center;
 		flex-direction: column;
 	}
+	&--project {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 // navbar
@@ -430,6 +436,133 @@ $font-roboto: Roboto Slab, serif;
 					.relax__whatdo {
 					}
 				}
+			}
+		}
+	}
+}
+
+// project
+.project {
+	width: 100%;
+	height: 1000px;
+	background-image: url("imgs/ipad.png");
+	background-repeat: no-repeat;
+	background-position: right;
+	.project__desc {
+		@include header($color-black);
+	}
+	.project__para {
+		@include para();
+		margin-bottom: 100px;
+	}
+	.project__content {
+		align-self: flex-start;
+		margin-left: 90px;
+		margin-bottom: 200px;
+		.project__name {
+			@include header($color-black);
+			font-size: 18px;
+		}
+		.project__para {
+			font-size: 16px;
+			width: 433px;
+			line-height: 22px;
+			margin-bottom: 25px;
+		}
+		.project__features {
+			display: flex;
+			align-items: center;
+			margin-top: 15px;
+			.circle {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 60px;
+				height: 60px;
+				border: 3px solid $color-black;
+				border-radius: 50px;
+			}
+			.project__info {
+				margin-left: 15px;
+			}
+			h4 {
+				@include header($color-black);
+				font-size: 18px;
+				margin-bottom: 2px;
+				
+			}
+			p {
+				@include para();
+				font-size: 16px;
+			}
+		}
+		.project__para:nth-of-type(2) {
+			width: 500px;
+			margin-top: 15px;
+			margin-bottom: 25px;
+		}
+		a {
+			color: $color-green;
+			text-transform: uppercase;
+			font-weight: bold;
+			font-family: $font-mont;
+			text-decoration: none;
+			span {
+				position: relative;
+			}
+			&:focus,
+			&:hover {
+				span {
+					left: 5px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1476px) {
+	.project {
+		.wrapper {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 1184px) {
+	.project {
+		background-image: none;
+		.project__content {
+			align-self: center;
+			margin: 0;
+		}
+	}
+}
+
+@media (max-width: 540px) {
+	.project {
+		text-align: center;
+		.project__content {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			.project__para {
+				width: 90%;
+				margin-bottom: -10px;
+			}
+			.project__features {
+				flex-direction: column;
+				.circle {
+					margin-bottom: 10px;
+					margin-top: 20px;
+				}
+				.project__info {
+					margin: 0;
+				}
+			}
+			.project__para:nth-of-type(2) {
+				width: 90%;
+				margin-top: 30px;
 			}
 		}
 	}
