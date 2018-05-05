@@ -151,6 +151,26 @@ $font-roboto: Roboto Slab, serif;
 		flex-direction: column;
 		width: 850px;
 	}
+	&--company {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 800px;
+	}
+	&--blog {
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		align-items: center;
+		height: 250px;
+	}
+	&--footer {
+		display: flex;
+		justify-content: flex-start;
+		width: 1200px;
+		align-items: center;
+	}
 }
 
 // navbar
@@ -741,6 +761,246 @@ $font-roboto: Roboto Slab, serif;
 			width: 100%;
 			text-align: center;
 			margin-top: 130px;
+		}
+	}
+}
+
+//contact
+.contact {
+	width: 100%;
+	height: 300px;
+	background-color: $color-green;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	.contact__desc {
+		@include header(#ffffff);
+	}
+	.contact__btn {
+		@include button();
+		border-radius: 10px;
+		border: 3px solid #ffffff;
+		margin-top: 10px;
+	}
+}
+
+//company
+.company {
+	width: 100%;
+	height: 165px;
+}
+
+@media (max-width: 816px) {
+	.company {
+		height: 200px;
+		.wrapper--company {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.company {
+		height: 300px;
+		.wrapper--company {
+			flex-direction: column;
+		}
+	}
+}
+
+// blog 
+.blog {
+	width: 100%;
+	height: 400px;
+	background-color: $color-black;
+	color: $color-greyL;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	h2 {
+		@include header($color-greyL);
+		font-size: 18px;
+	}
+	.fa {
+		font-size: 35px;
+	}
+	.fa-envelope {
+		font-size: 18px;
+	}
+	.blog__contact {
+		align-self: flex-start;
+		.contact__address {
+			display: flex;
+			margin-bottom: 10px;
+			address {
+				margin-left: 10px;
+				font-family: $font-roboto;
+				line-height: 25px;
+			}
+			p {
+				margin-left: 10px;
+				font-family: $font-roboto;
+				align-self: center;
+			}
+			a {
+				text-decoration: none;
+				color: $color-greyL;
+				align-self: center;
+				margin-left: 10px;
+				&:hover {
+					color: $color-grey;
+				}
+			}
+		}
+	}
+	.blog__posts {
+		align-self: flex-start;
+		.fa {
+			font-size: 24px;
+		}
+		.fa-play {
+			margin-right: 9px;
+		}
+		.posts__post {
+			display: flex;
+			margin-bottom: 15px;
+			a {
+				margin-left: 10px;
+				font-family: $font-roboto;
+				align-self: center;
+				text-decoration: none;
+				color: $color-greyL;
+				&:hover {
+					color: $color-grey;
+				}
+			}
+		}
+	}
+	.blog__tweets {
+		align-self: flex-start;
+		.fa {
+			font-size: 30px;
+		}
+		.tweets__tweet {
+			display: flex;
+			margin-bottom: 10px;
+			a {
+				width: 240px;
+				font-family: $font-roboto;
+				color: $color-greyL;
+				display: block;
+				text-decoration: none;
+				margin-left: 10px;
+				line-height: 22px;
+				&:hover {
+					color: $color-grey;
+				}
+			}
+			.twitter__tag {
+				font-weight: bold;
+			}
+			.twitter__time {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+@media (max-width: 757px) {
+	.blog {
+		height: 850px;
+		h2 {
+			text-align: center;
+		}
+		.wrapper--blog {
+			height: 100%;
+			flex-direction: column;
+			justify-content: center;
+			.blog__tweets,
+			.blog__posts,
+			.blog__contact {
+				align-self:center;
+				margin-bottom: 30px;
+			}
+			.posts__post {
+				margin-left: 20px;
+			}
+			.contact__address {
+				margin-left: 30px;
+			}
+		}
+	}
+}
+
+// footer
+.footer {
+	width: 100%;
+	height: 100px;
+	p {
+		font-family: $font-mont;
+		font-size: 14px;
+		color: #555555;
+	}
+	.footer__socials {
+		display: flex;
+		margin-left: 100px;
+		a {
+			margin-left: 8px;
+			width: 40px;
+			height: 40px;
+			display: block;
+			background-color: $color-black;
+			border-radius: 50px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-decoration: none;
+			transition: 0.3s;
+			span {
+				color: #ffffff;
+				font-size: 20px;
+			}
+			&:focus,
+			&:hover {
+				background-color: #ffffff;
+				span {
+					color: $color-black;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1216px) {
+	.footer {
+		.wrapper--footer {
+			width: 80%;
+		}
+	}
+}
+
+@media (max-width: 757px) {
+	.footer {
+		.wrapper--foter {
+			width: 100%;
+		}
+		.footer__socials {
+			margin: 0;
+		}
+	}
+}
+
+@media (max-width: 385px) {
+	.footer {
+		text-align: center;
+		.wrapper--footer {
+			flex-direction: column;
+			justify-content: center;
+		}
+		.footer__socials {
+			margin-top: 5px;
 		}
 	}
 }
