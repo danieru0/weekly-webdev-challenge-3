@@ -183,14 +183,20 @@ $font-roboto: Roboto Slab, serif;
 	border-bottom: 1px solid $color-grey;
 	transition: height 0.3s;
 	.navbar__hamburger {
-		position: absolute;
-		right: 0;
 		display: none;
 		.hamburger {
 			font-size: 24px;
 			background: transparent;
 			border: none;
 			cursor: pointer;
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin-top: auto;
+			margin-bottom: auto;
+			width: 40px;
+			height: 40px;
 		}
 	}
 	.navbar__list {
@@ -241,6 +247,7 @@ $font-roboto: Roboto Slab, serif;
 			width: 100%;
 			position: absolute;
 			align-items: center;
+			left: 0;
 			height: 0px;
 			top: 116px;
 			overflow: hidden;
